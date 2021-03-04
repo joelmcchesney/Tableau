@@ -25,7 +25,7 @@
     // Download the data
     myConnector.getData = function(table, doneCallback) {
         $.getJSON("https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure={"date":"date","newCases":"newCasesByPublishDate"}", function(resp) {
-            var feat = resp.features,
+            var feat = resp.data,
                 tableData = [];
 
             // Iterate over the JSON object
