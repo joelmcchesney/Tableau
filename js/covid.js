@@ -14,8 +14,8 @@
         }];
 
         var tableSchema = {
-            id: "covidFeed",
-            alias: "test data",
+            id: "earthquakeFeed",
+            alias: "Earthquakes with magnitude greater than 4.5 in the last seven days",
             columns: cols
         };
 
