@@ -1,12 +1,7 @@
 (function() {
     // Create the connector object
     
-      var txt;
-  if (confirm("Press a button!")) {
-    txt = "You pressed OK!";
-  } else {
-    txt = "You pressed Cancel!";
-  }
+
   document.getElementById("demo").innerHTML = txt;
     
     var myConnector = tableau.makeConnector();
@@ -55,6 +50,12 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function() {
         $("#submitButton").click(function() {
+                  var txt;
+  if (confirm("Press a button!")) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
+  }
             tableau.connectionName = "USGS Earthquake Feed"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
