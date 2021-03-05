@@ -28,7 +28,9 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=england&structure={"date":"date","newCases":"newCasesByPublishDate"}", function(resp) {
+        $.getJSON('https://api.coronavirus.data.gov.uk/v1/data?' +
+    'filters=areaType=nation;areaName=england&' +
+    'structure={"date":"date","newCases":"newCasesByPublishDate"}', function(resp) {
             var feat = resp.data,
                 tableData = [];
 
@@ -50,12 +52,6 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function() {
         $("#submitButton").click(function() {
-                  var txt;
-  if (confirm("Press a button!")) {
-    txt = "You pressed OK!";
-  } else {
-    txt = "You pressed Cancel!";
-  }
             tableau.connectionName = "USGS Earthquake Feed"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
